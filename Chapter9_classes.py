@@ -1,8 +1,9 @@
 # Упражнения из главы 9 - классы
+from random import randint, choices
+
 import car
 from restaurant import Restaurant
 from user import User, Admin, Privileges
-from random import randint, choices
 
 
 class Cat:
