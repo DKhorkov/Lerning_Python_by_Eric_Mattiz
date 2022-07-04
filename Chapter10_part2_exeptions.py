@@ -10,7 +10,7 @@ try:
 except ValueError:
     print('Operation couldn\'t be done!U have entered a string, not a number!\n')
 else:
-    print(result,end='\n\n')
+    print(result, end='\n\n')
 
 # 10.7
 print('Summing two numbers')
