@@ -1,0 +1,1 @@
+Tasks 13.5 and 13.6 are made in directory "Chapter12/12.6/the_game.py"
