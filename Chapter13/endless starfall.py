@@ -3,7 +3,7 @@
 import pygame
 from star_class import Star
 
-
+pygame.init()
 screen = pygame.display.set_mode((1200, 900))
 screen_rect = screen.get_rect()
 pygame.display.set_caption('13.1-13.4 endless starfall')

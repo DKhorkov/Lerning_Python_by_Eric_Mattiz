@@ -10,6 +10,7 @@ class Main:
 
     def __init__(self):
         """Инициализация основных атрибутов класса."""
+        pygame.init()
         self.screen = pygame.display.set_mode((1200, 900))
         pygame.display.set_caption("Misha on black screen")
         self.pic = Picture(self.screen)

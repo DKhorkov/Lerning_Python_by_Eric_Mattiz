@@ -11,6 +11,7 @@ class Game:
 
     def __init__(self):
         """Инициализация атрибутов класса игры."""
+        pygame.init()
         self.screen = pygame.display.set_mode((1800, 1000))
         pygame.display.set_caption('12.6')
         self.ship = Ship(self.screen)
