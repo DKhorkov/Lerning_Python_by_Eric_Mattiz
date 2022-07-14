@@ -1,10 +1,9 @@
-"""Основной файл для игры из упражнения 14.2"""
+"""Основной файл для игры из упражнения 14.2, 14.3"""
 
-# Упражнение 14.1 выполнено в рамках игры Alien Invasion
+# Упражнение 14.1, 14.4, 14.5 выполнено в рамках игры Alien Invasion
 
 import pygame
 from time import sleep
-from random import randint
 
 from settings import Settings
 from main_square import MainSquare
@@ -25,7 +24,7 @@ class Game:
         self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption('Shooting in square')
 
-        self.main_square = MainSquare(self.screen)
+        self.main_square = MainSquare(self.screen, self.settings)
         self.enemy_square = EnemySquare(self.screen, self.settings)
         self.bullets = pygame.sprite.Group()
 
@@ -57,7 +56,7 @@ class Game:
                 elif event.key == pygame.K_s:
                     self.moving_down = True
                 elif event.key == pygame.K_SPACE:
-                    new_bullet = Bullet(self.screen, self.main_square)
+                    new_bullet = Bullet(self.screen, self.main_square, self.settings)
                     self.bullets.add(new_bullet)
             elif event.type == pygame.KEYUP:
                 if event.key == pygame.K_w:
@@ -79,7 +78,7 @@ class Game:
                     self.game_active = False
                     self.scoreboard.lives = self.settings.lives_at_start
                     self.scoreboard.score = 0
-                    self.settings.enemy_square_speed = 0.4
+                    self.settings.initialize_dynamic_settings()
                 sleep(1)
                 break
             bullet.show_bullet()
@@ -87,7 +86,7 @@ class Game:
         collision = pygame.sprite.spritecollideany(self.enemy_square, self.bullets)
         if collision:
             self.bullets.empty()
-            self.settings.enemy_square_speed = randint(1, 20) / 10
+            self.settings.scaling()
             self.scoreboard.score += 1
             self.scoreboard.draw_score()
             sleep(0.5)

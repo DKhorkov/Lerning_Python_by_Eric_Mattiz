@@ -26,9 +26,17 @@ class Settings:
         self.initialize_dynamic_settings()
         self.lives_at_start = 3
 
+        self.game_scale = 1.1
+
     def initialize_dynamic_settings(self):
         """Инициализация динамических настроек, которые могут меняться в ходе игры"""
         self.main_square_speed = 1
         self.enemy_square_speed = 0.4
         self.direction = 1
         self.bullet_speed = 2
+
+    def scaling(self):
+        """Рост скорости игры"""
+        self.main_square_speed *= self.game_scale
+        self.enemy_square_speed *= self.game_scale
+        self.bullet_speed *= self.game_scale

@@ -2,18 +2,17 @@
 import pygame
 from pygame.sprite import Sprite
 
-from settings import Settings
 
 
 class Bullet(Sprite):
     """Обычные пули"""
 
-    def __init__(self, screen, main_square):
+    def __init__(self, screen, main_square, settings):
         """Атрибуты пули"""
         super().__init__()
         pygame.init()
 
-        self.settings = Settings()
+        self.settings = settings
         self.color = self.settings.bullet_color
         self.screen = screen
         self.screen_rect = self.screen.get_rect()
