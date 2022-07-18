@@ -1,4 +1,6 @@
 # Основной файл для запуска заданий 12.2 - 12.5
+# https://www.pygame.org/docs/
+# https://python-course.readthedocs.io/projects/elementary/en/latest/lessons/18-pygame.html
 
 import pygame
 

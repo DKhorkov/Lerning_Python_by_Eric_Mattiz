@@ -1,4 +1,6 @@
 # Упражнения 15.3 - 15.5
+# https://matplotlib.org/stable/gallery/color/colormap_reference.html#sphx-glr-gallery-color-colormap-reference-py
+
 import matplotlib.pyplot as plt
 from random import choice
 

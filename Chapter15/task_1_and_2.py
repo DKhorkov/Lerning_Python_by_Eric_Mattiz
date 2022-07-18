@@ -1,4 +1,5 @@
 # Упражнения 15.1 и 15.2
+# https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html
 
 import matplotlib.pyplot as plt
 
